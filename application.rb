@@ -48,6 +48,10 @@ GIFS = [
   'https://i.imgur.com/e26eOBC.gif'
 ]
 
+use Rack::Auth::Basic, 'Protected Application' do |username, password|
+  username == ENV['USERNAME'] && password == ENV['PASSWORD']
+end
+
 get '/' do
   'Configured and running.'
 end
@@ -59,7 +63,6 @@ post '/now' do
   currency = payload['currency']
   amount = payload['amount']
   formated_amount = Money.new(amount, currency).format
-  puts formated_amount
 
   index = rand(GIFS.size)
   gif = GIFS[index]
