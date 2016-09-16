@@ -48,6 +48,10 @@ GIFS = [
   'https://i.imgur.com/e26eOBC.gif'
 ]
 
+get '/' do
+  'Configured and running.'
+end
+
 post '/now' do
   request.body.rewind
   payload = JSON.parse request.body.read
