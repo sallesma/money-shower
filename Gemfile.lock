@@ -1,6 +1,14 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
+    i18n (0.7.0)
+    json (1.8.3)
+    money (6.5.1)
+      i18n (>= 0.6.4, <= 0.7.0)
+    multi_xml (0.5.5)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -14,7 +22,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  sinatra (~> 1.4.3)
+  httparty
+  money
+  sinatra
+
+RUBY VERSION
+   ruby 2.1.5p273
 
 BUNDLED WITH
    1.12.5
