@@ -67,14 +67,10 @@ post '/now' do
   endpoint = ENV['SLACK_WEBHOOK_URL']
   options = {
       body: {
-        attachments: [
-          {
-            text: "#{formated_amount} - #{gif}",
-            username: 'Incoming money',
-            icon_emoji: ':money_with_wings:',
-            unfurl_links: true
-          }
-        ]
+        text: "A bank transfer of #{formated_amount} has been done - #{gif}",
+        username: 'Incoming money',
+        icon_emoji: ':money_with_wings:',
+        unfurl_links: true
       }.to_json,
       headers: { 'Content-Type' => 'application/json' }
     }
